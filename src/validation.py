@@ -43,8 +43,7 @@ def validate_missing_values(df):
 
 
 def validate_duplicates(df):
-    duplicated_rows=df[df.duplicated().sum(keep=False)]
-    return duplicated_rows
+    return df.duplicated().sum()
 
 
 
