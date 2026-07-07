@@ -1,5 +1,5 @@
 import pandas as pd
-from config import COLUMN_ALIASES,REQUIRED_COLUMNS
+from src.config import COLUMN_ALIASES,REQUIRED_COLUMNS
 
 
 def load_csv(file):

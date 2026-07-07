@@ -3,14 +3,16 @@ COLUMN_ALIASES= {
         "GL",
         "General Ledger",
         "Account Name",
-        "Ledger"
+        "Ledger",
+        "account_code"
     ],
 
     "Amount": [
         "Amt",
         "Balance",
         "Net Amount",
-        "Trial Balance"
+        "Trial Balance",
+        "amount"
     ]
 }
 REQUIRED_COLUMNS = [
