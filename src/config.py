@@ -19,3 +19,10 @@ REQUIRED_COLUMNS = [
     "Account",
     "Amount"
 ]
+ACCOUNT_ALIASES = {
+    "Rent Expense": "Rent",
+    "Sales Revenue": "Sales",
+    "Accounts Receivable": "Receivables",
+    "Accounts Payable": "Payables",
+    "Cost Of Goods Sold": "COGS"
+}
