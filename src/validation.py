@@ -45,7 +45,15 @@ def validate_missing_values(df):
 def validate_duplicates(df):
     return df.duplicated().sum()
 
-
+def aggregate_accounts(df):
+    df=df.copy()
+    aggregated_df = (
+    df.groupby("Account")["Amount"]
+      .sum()
+      .reset_index()
+)
+    return aggregated_df
+    
 
             
 
