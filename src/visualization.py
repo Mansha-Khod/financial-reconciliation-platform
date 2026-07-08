@@ -59,16 +59,19 @@ def plot_gl_tb_totals(rec_df):
 
 def plot_difference_distribution(rec_df):
     diff = rec_df.loc[
-    rec_df["Difference"] != 0,
-    "Difference"
-]
-    fig=px.histogram(
+        rec_df["Difference"] != 0,
+        "Difference"
+    ]
+
+    fig = px.histogram(
         x=diff,
+        nbins=20,
         color_discrete_sequence=["#636EFA"],
         text_auto=True,
-        nbins=20,
-        title="Distribution of Reconciliation Differences"
+        title="Distribution of Reconciliation Differences",
+        labels={"x": "Difference", "y": "Number of Accounts"},
     )
+
     return fig
 
     
