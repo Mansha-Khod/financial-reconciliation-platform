@@ -63,7 +63,7 @@ def plot_difference_distribution(rec_df):
         x="Account",
         y="Difference",
         color="Status",
-        title="TEST SCATTER",
+        title="Account-wise Reconciliation Differences",
     )
 
     return fig
