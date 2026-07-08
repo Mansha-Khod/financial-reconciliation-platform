@@ -9,6 +9,7 @@ from src.validation import (
 from src.preprocessing import (
     clean_account_names,
     clean_amount_column,
+    convert_amount_to_numeric,
 )
 
 from src.matching import match_accounts
@@ -23,6 +24,13 @@ from src.kpi import (
 from src.exception_engine import (
     generate_exception_report,
     top_mismatches,
+)
+
+from src.visualization import (
+    plot_status_distribution,
+    plot_top_variances,
+    plot_gl_tb_totals,
+    plot_difference_distribution,
 )
 
 import os
@@ -110,9 +118,11 @@ def main():
 
     tb_df = clean_account_names(tb_df)
     tb_df = clean_amount_column(tb_df)
+    tb_df = convert_amount_to_numeric(tb_df)
 
     gl_df = clean_account_names(gl_df)
     gl_df = clean_amount_column(gl_df)
+    gl_df = convert_amount_to_numeric(gl_df)
 
     # -----------------------------
     # Matching
@@ -150,20 +160,56 @@ def main():
     top5 = top_mismatches(rec_df)
 
     # -----------------------------
-    # Save Results
+    # Save Reports
     # -----------------------------
 
     os.makedirs("outputs/reports", exist_ok=True)
 
-    rec_df.to_csv("outputs/reports/reconciliation_report.csv", index=False)
-    exception_df.to_csv("outputs/reports/exception_report.csv", index=False)
-    top5.to_csv("outputs/reports/top_mismatches.csv", index=False)
+    rec_df.to_csv(
+        "outputs/reports/reconciliation_report.csv",
+        index=False,
+    )
+
+    exception_df.to_csv(
+        "outputs/reports/exception_report.csv",
+        index=False,
+    )
+
+    top5.to_csv(
+        "outputs/reports/top_mismatches.csv",
+        index=False,
+    )
+
     pd.DataFrame([kpis]).to_csv(
         "outputs/reports/kpi_summary.csv",
         index=False,
     )
 
-    print("\nReports saved to outputs/reports/")
+    # -----------------------------
+    # Save Charts
+    # -----------------------------
+
+    os.makedirs("outputs/charts", exist_ok=True)
+
+    plot_status_distribution(rec_df).write_html(
+        "outputs/charts/status_distribution.html"
+    )
+
+    plot_top_variances(rec_df).write_html(
+        "outputs/charts/top_variances.html"
+    )
+
+    plot_gl_tb_totals(rec_df).write_html(
+        "outputs/charts/gl_vs_tb.html"
+    )
+
+    plot_difference_distribution(rec_df).write_html(
+        "outputs/charts/difference_distribution.html"
+    )
+
+    print("\nReconciliation completed successfully.")
+    print("Reports saved to outputs/reports/")
+    print("Charts saved to outputs/charts/")
 
 
 if __name__ == "__main__":
