@@ -14,7 +14,8 @@ https://financial-reconciliation-platform.streamlit.app/
 
 **Demo Video**
 
-<img src="assests/demo_.gif" alt="Application Demo Video" width="100%">
+<video src="assests/demo.mp4" width="100%" autoplay loop muted playsinline></video>
+
 
 ---
 
