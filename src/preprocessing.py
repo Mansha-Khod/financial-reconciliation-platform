@@ -16,7 +16,7 @@ def clean_amount_column(df):
         df['Amount']=(
             df['Amount']
             .astype(str)
-            .str.replace(r'[^\d(),.]','',regex=True))
+            .str.replace(r'[^\d(),.-]','',regex=True))
     return df
 
 def convert_amount_to_numeric(df):

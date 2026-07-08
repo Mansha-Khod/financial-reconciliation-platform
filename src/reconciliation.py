@@ -5,9 +5,6 @@ def perform_reconciliation(tb_df,gl_df):
     rec_df=gl_df.merge(tb_df,on='Account',how="outer",suffixes=('_GL','_TB'))
 
     rec_df['Difference']=(rec_df['Amount_GL']).fillna(0)-(rec_df['Amount_TB']).fillna(0)
-
-
-    raw_variance=(rec_df['Difference']/rec_df['Amount_TB'])
     is_invalid_tb = rec_df['Amount_TB'].isna() | (rec_df['Amount_TB'] == 0)
     raw_variance = np.where(is_invalid_tb, np.nan, rec_df['Difference'] / rec_df['Amount_TB'])
     rec_df['Variance'] = [
