@@ -227,5 +227,4 @@ The application automatically generates:
 
 B.Sc. Data Science
 
-Mount Carmel College, Bangalore<img width="959" height="450" alt="Screenshot 2026-07-08 214950" src="https://github.com/user-attachments/assets/d48a35ad-b345-4167-828e-f60ba9221d8c" />
-<img width="959" height="450" alt="Screenshot 2026-07-08 214950" src="https://github.com/user-attachments/assets/d271f938-f27c-448d-b7b5-fcf2b90fc89b" />
+Mount Carmel College, Bangalore
