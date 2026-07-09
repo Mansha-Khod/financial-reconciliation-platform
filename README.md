@@ -14,7 +14,7 @@ https://financial-reconciliation-platform.streamlit.app/
 
 **Demo Video**
 
-![demo_video](assests/demo.gif)
+![demo_video](assets/demo.gif)
 
 
 ---
@@ -23,28 +23,28 @@ https://financial-reconciliation-platform.streamlit.app/
 
 ### Dashboard
 
-![dashboard_1](assests/screenshots/dashboard_1.png)
-![dashboard_2](assests/screenshots/dashboard_2.png)
-![dashboard_3](assests/screenshots/dashboard_3.png)
+![dashboard_1](assets/screenshots/dashboard_1.png)
+![dashboard_2](assets/screenshots/dashboard_2.png)
+![dashboard_3](assets/screenshots/dashboard_3.png)
 
 ---
 
 ### Validation Summary
 
-![validation](assests/screenshots/validation.png)
+![validation](assets/screenshots/validation.png)
 
 ---
 
 ### KPI Dashboard
 
-![kpi](assests/screenshots/kpi.png)
+![kpi](assets/screenshots/kpi.png)
 
 
 ---
 
 ### Exception Report
 
-![exception](assests/screenshots/exception.png)
+![exception](assets/screenshots/exception.png)
 
 ---
 
@@ -73,7 +73,7 @@ https://financial-reconciliation-platform.streamlit.app/
 ## Project Architecture
 
 ```
-reconciliation-analysis/
+financial-reconciliation-platform/
 
 │
 ├── app.py
@@ -143,10 +143,10 @@ Visualization Dashboard
 
 - Python
 - Pandas
-- NumPy
-- Plotly
 - RapidFuzz
+- Plotly
 - Streamlit
+- NumPy
 
 ---
 
@@ -155,7 +155,7 @@ Visualization Dashboard
 Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Mansha-Khod/financial-reconciliation-platform.git
 ```
 
 Install dependencies
@@ -211,13 +211,12 @@ The application automatically generates:
 
 ## Future Improvements
 
+- Configurable reconciliation rules
 - PDF report generation
-- Excel export
+- Excel report export
 - User-defined tolerance
-- Multi-file reconciliation
 - Database integration
-- Automated scheduling
-- AI-assisted anomaly detection
+- Multi-file reconciliation
 
 ---
 
@@ -225,6 +224,7 @@ The application automatically generates:
 
 **Mansha Khod**
 
-B.Sc. Data Science
-
+B.Sc. Data Science  
 Mount Carmel College, Bangalore
+
+GitHub: https://github.com/Mansha-Khod
