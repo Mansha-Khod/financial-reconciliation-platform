@@ -11,7 +11,7 @@ def perform_reconciliation(tb_df,gl_df):
         f"{x*100:.2f}%" if pd.notna(x) else "N/A" for x in raw_variance
     ]
 
-    tolerance=1.00
+    tolerance = np.maximum(1.00, rec_df['Amount_TB'].abs() * 0.0001)
     conditions=[
         rec_df['Amount_GL'].isna(),
         rec_df['Amount_TB'].isna(),
