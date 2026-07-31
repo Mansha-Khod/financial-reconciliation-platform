@@ -106,13 +106,21 @@ with col2:
         "Upload General Ledger",
         type="csv",
     )
+MAX_FILE_SIZE_MB = 10
 
+def _exceeds_size_limit(file):
+    return file is not None and file.size > MAX_FILE_SIZE_MB * 1024 * 1024
+
+if _exceeds_size_limit(tb_file) or _exceeds_size_limit(gl_file):
+    st.error(f"Each file must be under {MAX_FILE_SIZE_MB}MB.")
+    st.stop()
 
 # ---------------------------------------------------
 # Run Pipeline
 # ---------------------------------------------------
 
 if tb_file is not None and gl_file is not None:
+    
 
     tb_df = pd.read_csv(tb_file)
     gl_df = pd.read_csv(gl_file)
